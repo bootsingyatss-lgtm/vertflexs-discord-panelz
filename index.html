@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Dark space background -->
+    <div class="stars"></div>
+
+    <div class="container">
+
+        <!-- HERO (only shows before login) -->
+        <header class="hero" id="hero">
+            <h1>Discord Bot Manager</h1>
+            <p>Control your bot, manage servers, and automate tasks with ease.</p>
+            <button id="loginBtn" class="login-btn">Login with Discord</button>
+        </header>
+
+        <!-- MAIN PANELS (appear after click) -->
+        <div class="panels" id="panels">
+
+            <!-- LEFT CARD – Icon + Title -->
+            <div class="card left-card">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 100 100" class="discord-icon">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00ffbb"/>
+                                <stop offset="100%" stop-color="#5865f2"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#grad)" d="M70 30c-5-5-12-8-20-8-8 0-15 3-20 8-3 3-5 7-5 12v28c0 5 2 9 5 12 5 5 12 8 20 8 8 0 15-3 20-8 3-3 5-7 5-12V42c0-5-2-9-5-12z"/>
+                        <path fill="#fff" d="M38 48c0-2 1-4 3-4 2 0 3 2 3 4v12c0 2-1 4-3 4-2 0-3-2-3-4V48zm18 0c0-2 1-4 3-4 2 0 3 2 3 4v12c0 2-1 4-3 4-2 0-3-2-3-4V48z"/>
+                    </svg>
+                </div>
+                <h2 class="panel-title">BetterDiscordPanel</h2>
+            </div>
+
+            <!-- RIGHT CARD – Login -->
+            <div class="card right-card" id="loginCard">
+                <button id="closePanel" class="close-btn">×</button>
+                <h3 class="welcome">Welcome back!</h3>
+
+                <form id="loginForm" class="login-form">
+                    <label for="token">TOKEN</label>
+                    <input type="password" id="token" placeholder="Enter your bot token" required>
+
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Overlay (click to close) -->
+        <div id="overlay" class="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
