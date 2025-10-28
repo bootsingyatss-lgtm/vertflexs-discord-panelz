@@ -1,50 +1,39 @@
-/* (Keep all previous styles — only adding new ones below) */
-
-/* PROFILE PAGE */
-.profile-page {
-    position: fixed; inset: 0; z-index: 1002;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 20px; opacity: 0; visibility: hidden;
-    transition: opacity .5s ease;
+/* PROFILE CONTAINER (slides in from right) */
+.profile-container {
+    position: fixed; top: 0; right: -480px; width: 480px; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1002; transition: right .55s cubic-bezier(.2,.8,.4,1);
+    padding: 40px;
 }
-.profile-page.open { opacity: 1; visibility: visible; }
-
-.back-btn {
-    position: absolute; top: 24px; left: 24px;
-    background: rgba(255,255,255,.1); color: #fff; border: none;
-    padding: 10px 16px; border-radius: 12px; font-size: 1rem;
-    cursor: pointer; backdrop-filter: blur(10px);
-    transition: background .2s;
-}
-.back-btn:hover { background: rgba(255,255,255,.2); }
+.profile-container.open { right: 0; }
 
 .profile-card {
-    background: #1e1e2e; padding: 32px; border-radius: 28px;
-    box-shadow: 0 16px 50px rgba(0,0,0,.7); width: 100%; max-width: 420px;
-    text-align: center; position: relative; overflow: hidden;
+    width: 100%; background: #1e1e2e; padding: 36px; border-radius: 28px;
+    box-shadow: 0 16px 50px rgba(0,0,0,.7); text-align: center;
+    position: relative; overflow: hidden;
 }
 
 .avatar {
-    width: 120px; height: 120px; border-radius: 50%;
+    width: 128px; height: 128px; border-radius: 50%;
     border: 6px solid #2d2d44; margin-bottom: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.5);
+    box-shadow: 0 8px 30px rgba(0,0,0,.6);
 }
 
-.user-info h2 {
-    font-size: 1.8rem; margin-bottom: 8px; color: #fff;
+.username {
+    font-size: 1.8rem; margin: 12px 0; color: #fff;
 }
-.user-info p {
+
+.created-at {
     color: #aaa; font-size: .95rem;
 }
 
 .banner {
-    position: absolute; top: 0; left: 0; width: 100%; height: 120px;
+    position: absolute; top: 0; left: 0; width: 100%; height: 140px;
     background-size: cover; background-position: center;
-    filter: blur(8px); opacity: .4; z-index: -1;
+    filter: blur(10px); opacity: .3; z-index: -1;
 }
 
 /* Help text */
 .help-text {
     font-size: .8rem; color: #888; margin-top: 8px; line-height: 1.4;
 }
-.help-text a { color: #7289da; text-decoration: underline; }
